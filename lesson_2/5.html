@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Homework</title>
+</head>
+
+<body>
+  <!--
+Обязательное задание.
+
+Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
+Необходимо реализовать функцию:
+mathOperation(num1, num2, operation);
+Параметры:
+num1 - первое число.
+num2 - второе число.
+operation - строка, которая содержит один символ из: "+", "-", "*", "/".
+Функция mathOperation должна вернуть результат операции, который был передан в
+параметр operation для двух первых аргументов (num1 и num2).
+Функция mathOperation должна использовать для вычисления функции из 4 задания.
+
+Примеры вызова функции:
+console.log(mathOperation(5, 3, "+")); // 8
+console.log(mathOperation(5, 3, ":)")); // NaN
+
+Функции mathOperation всегда передаются корректные числа, проверки на NaN,
+Infinity делать не нужно, однако, в случае если был передан некорректный
+аргумент в параметр operation, необходимо вернуть NaN.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+  <script>
+    "use strict";
+
+
+    console.log(mathOperation(5, 3, "+")); // 8
+    console.log(mathOperation(5, 3, ":)")); // NaN
+    // Посмотрел решение :(  использовал более длинное решение ну я думаю что это не самое кретичное. Не стал изменять на короткую форму так как это мое решение :)
+
+
+
+
+    /**
+     * Вычисляет выражения из третего аргумента
+     * @param {number} num1 - Первое число.
+     * @param {number} num2 - Второе число.
+     * @param {string} operation - операция вычесления
+     * @return {number} Результат вычесления или NaN
+     */
+    function mathOperation(num1, num2, operation) {
+      switch (operation) {
+        case '+':
+          return getSumm(num1, num2);
+          break;
+        case '-':
+          return getDifference(num1, num2);
+          break;
+        case '*':
+          return getMultiplier(num1, num2);
+          break;
+        case '/':
+          return getDivision(num1, num2);
+          break;
+        default:
+          return NaN
+      }
+    }
+
+    /**
+     * Сложение двух чисел
+     * @param {number} firstNumber - первое число
+     * @param {number} secondNumber - второе число
+     * @return {number} Сумма чисел firstNumber и secondNumber
+    */
+    function getSumm(firstNumber, secondNumber) {
+      return firstNumber + secondNumber;
+    }
+
+    /**
+     * Разность двух чисел
+     * @param {number} firstNumber - первое число
+     * @param {number} secondNumber - второе число
+     * @return {number} Разность чисел firstNumber и secondNumber
+     */
+    function getDifference(firstNumber, secondNumber) {
+      return Math.abs(firstNumber - secondNumber);
+    }
+
+    /**
+     * Умножение двух чисел
+     * @param {number} firstNumber - первое число
+     * @param {number} secondNumber - второе число
+     * @return {number} Умножение чисел firstNumber и secondNumber
+     */
+    function getMultiplier(firstNumber, secondNumber) {
+      return firstNumber * secondNumber;
+    }
+
+    /**
+     * Деление двух чисел
+     * @param {number} firstNumber - первое число
+     * @param {number} secondNumber - второе число
+     * @return {number} Деление чисел firstNumber и secondNumber
+     */
+    function getDivision(firstNumber, secondNumber) {
+      return firstNumber / secondNumber;
+    }
+
+
+
+
+  </script>
+</body>
+
+</html>
